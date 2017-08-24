@@ -19,6 +19,7 @@ import Placeholder from '@components/general/Placeholder';
 import AuthScenes from './auth';
 import TabsScenes from './tabs';
 import Dashboard from '@containers/home/dashboardView';
+import TopupAmount from '@containers/topup/amount';
 
 /* Routes ==================================================================== */
 export default Actions.create(
@@ -56,6 +57,14 @@ export default Actions.create(
         key={'dashboard'}
         title={''}
         component={Dashboard}
+      />
+
+      <Scene
+        clone
+        key={'topupAmount'}
+        title={'Topup'}
+        component={TopupAmount}
+        analyticsDesc={'Topup: Choose amount'}
       />
     </Scene>
   </Scene>,
