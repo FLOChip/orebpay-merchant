@@ -241,4 +241,9 @@ export default {
     borderTopColor: Colors.border,
     borderTopWidth: 1,
   },
+
+  logoNaviBox: {
+    backgroundColor: Colors.brand.primary,
+    height: 400,
+  }
 };

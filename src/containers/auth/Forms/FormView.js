@@ -279,7 +279,7 @@ class AuthForm extends Component {
 
           <Spacer size={20} />
 
-          <Button title={this.props.buttonTitle} onPress={this.handleSubmit} />
+          <Button title={this.props.buttonTitle} onPress={Actions.dashboard} />
 
           <Spacer size={10} />
 

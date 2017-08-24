@@ -81,12 +81,13 @@ class Authenticate extends Component {
       <View style={[styles.footer]}>
         <View style={{width: width, padding: 15}}>
           <Button
-            title={'GET STARTED'}
-            icon={{ name: 'person', size: 32 }}
+            title={'LOGIN'}
+            icon={{ name: 'person', size: 26 }}
             onPress={Actions.login}
-            backgroundColor={'#61CAA1'}
+            backgroundColor={'#3DB788'}
           />
         </View>
+
         <View>
           <Button
             small

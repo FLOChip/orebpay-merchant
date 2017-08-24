@@ -18,6 +18,7 @@ import AppLaunch from '@containers/Launch/LaunchContainer';
 import Placeholder from '@components/general/Placeholder';
 import AuthScenes from './auth';
 import TabsScenes from './tabs';
+import Dashboard from '@containers/home/dashboardView';
 
 /* Routes ==================================================================== */
 export default Actions.create(
@@ -47,6 +48,14 @@ export default Actions.create(
         title={'Coming Soon'}
         component={Placeholder}
         analyticsDesc={'Placeholder: Coming Soon'}
+      />
+
+      <Scene
+        hideNavBar
+        clone
+        key={'dashboard'}
+        title={''}
+        component={Dashboard}
       />
     </Scene>
   </Scene>,

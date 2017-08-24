@@ -6,14 +6,14 @@
  */
 
 const app = {
-  background: '#E9EBEE',
+  background: '#F5F5F5',
   cardBackground: '#FFFFFF',
   listItemBackground: '#FFFFFF',
 };
 
 const brand = {
   brand: {
-    primary: '#0E4EF8',
+    primary: '#3DB788',
     secondary: '#17233D',
   },
 };
