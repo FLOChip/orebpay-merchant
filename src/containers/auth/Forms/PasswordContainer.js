@@ -15,11 +15,11 @@ import FormRender from './FormView';
 // What data from the store shall we send to the component?
 const mapStateToProps = state => ({
   user: state.user,
-  formType: 'login',
-  formFields: ['Email'],
-  buttonTitle: 'Next »',
+  formType: 'password',
+  formFields: ['Password'],
+  buttonTitle: 'Login »',
   successMessage: 'Awesome, you\'re now logged in',
-  iconImg: 'email',
+  iconImg: 'password',
 });
 
 // Any actions to map to the component?

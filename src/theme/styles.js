@@ -283,4 +283,9 @@ export default {
     inputButtonHighlighted: {
         backgroundColor: '#193441'
     },
+
+    iconImg: {
+      width: 80,
+      height: 80,
+    }
 };

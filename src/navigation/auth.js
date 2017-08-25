@@ -13,6 +13,7 @@ import { AppConfig } from '@constants/';
 // Scenes
 import Authenticate from '@containers/auth/AuthenticateView';
 import LoginForm from '@containers/auth/Forms/LoginContainer';
+import PasswordForm from '@containers/auth/Forms/PasswordContainer';
 import SignUpForm from '@containers/auth/Forms/SignUpContainer';
 import ResetPasswordForm from '@containers/auth/Forms/ResetPasswordContainer';
 import UpdateProfileForm from '@containers/auth/Forms/UpdateProfileContainer';
@@ -30,10 +31,18 @@ const scenes = (
     <Scene
       {...AppConfig.navbarProps}
       key={'login'}
-      title={'Login'}
+      title={'Enter your email'}
       clone
       component={LoginForm}
       analyticsDesc={'Login'}
+    />
+    <Scene
+      {...AppConfig.navbarProps}
+      key={'password'}
+      title={'Enter Password'}
+      clone
+      component={PasswordForm}
+      analyticsDesc={'Password'}
     />
     <Scene
       {...AppConfig.navbarProps}

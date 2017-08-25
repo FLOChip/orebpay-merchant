@@ -11,6 +11,7 @@ import {
   ScrollView,
   AsyncStorage,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import FormValidation from 'tcomb-form-native';
 import { Actions } from 'react-native-router-flux';
@@ -35,12 +36,13 @@ class AuthForm extends Component {
     }),
     submit: PropTypes.func,
     onSuccessfulSubmit: PropTypes.func,
-    formType: PropTypes.oneOf(['login', 'signUp', 'passwordReset', 'updateProfile']),
+    formType: PropTypes.oneOf(['login', 'signUp', 'passwordReset', 'updateProfile', 'password']),
     formFields: PropTypes.arrayOf(PropTypes.string),
     buttonTitle: PropTypes.string,
     successMessage: PropTypes.string,
     introTitle: PropTypes.string,
     introText: PropTypes.string,
+    iconImg: PropTypes.string,
   }
 
   static defaultProps = {
@@ -53,6 +55,7 @@ class AuthForm extends Component {
     successMessage: 'Awesome, you\'re now logged in',
     introTitle: null,
     introText: null,
+    iconImg: null,
   }
 
   constructor(props) {
@@ -250,7 +253,7 @@ class AuthForm extends Component {
         style={[AppStyles.container]}
         contentContainerStyle={[AppStyles.container]}
       >
-        <Card>
+        <View style={{padding: 15}}>
           <Alerts
             status={this.state.resultMsg.status}
             success={this.state.resultMsg.success}
@@ -270,6 +273,22 @@ class AuthForm extends Component {
             </View>
           }
 
+          <View style={{alignItems: 'center', paddingTop: 20, paddingBottom: 40}}>
+          {this.props.iconImg === 'email' &&
+              <Image
+                source={require('../../../images/email.png')}
+                style={[AppStyles.iconImg]}
+              />
+          }
+
+          {this.props.iconImg === 'password' &&
+              <Image
+                source={require('../../../images/password.png')}
+                style={[AppStyles.iconImg]}
+              />
+          }
+          </View>
+
           <Form
             ref={(b) => { this.form = b; }}
             type={this.state.form_fields}
@@ -279,8 +298,13 @@ class AuthForm extends Component {
 
           <Spacer size={20} />
 
-          <Button title={this.props.buttonTitle} onPress={Actions.dashboard} />
+          {this.props.formType === 'login' &&
+            <Button title={this.props.buttonTitle} onPress={Actions.password} />
+          }
 
+          {this.props.formType === 'password' &&
+            <Button title={this.props.buttonTitle} onPress={Actions.dashboard} />
+          }
           <Spacer size={10} />
 
           {this.props.formType === 'login' &&
@@ -292,15 +316,9 @@ class AuthForm extends Component {
               </TouchableOpacity>
 
               <Spacer size={10} />
-
-              <Text p style={[AppStyles.textCenterAligned]}>
-                - or -
-              </Text>
-
-              <Button outlined title={'Sign Up'} onPress={Actions.signUp} />
             </View>
           }
-        </Card>
+        </View>
 
         <Spacer size={60} />
       </ScrollView>
