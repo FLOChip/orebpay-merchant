@@ -152,7 +152,16 @@ class Dashboard extends Component {
 
       </View>
 
-      <ScrollView style={{width: width, paddingTop: 10}}>
+      <ScrollView style={{width: width}}>
+
+        <View style={{width: width, padding: 5}}>
+          <Image
+            source={require('../../images/graph.png')}
+            style={{width: '100%', resizeMode: 'contain'}}
+          />
+        </View>
+
+
         <View style={styles.activityItem}>
           <Text style={{fontSize: 16}}>RM30.00</Text>
           <Text style={{fontSize: 12, color: '#999'}}>Received from Melissa Chen</Text>
