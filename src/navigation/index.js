@@ -20,6 +20,8 @@ import AuthScenes from './auth';
 import TabsScenes from './tabs';
 import Dashboard from '@containers/home/dashboardView';
 import TopupAmount from '@containers/topup/amount';
+import TopupScan from '@containers/topup/scan';
+import TopupSuccess from '@containers/topup/success';
 
 /* Routes ==================================================================== */
 export default Actions.create(
@@ -65,6 +67,22 @@ export default Actions.create(
         title={'Topup'}
         component={TopupAmount}
         analyticsDesc={'Topup: Choose amount'}
+      />
+
+      <Scene
+        clone
+        key={'topupScan'}
+        title={'Topup'}
+        component={TopupScan}
+        analyticsDesc={'Topup: Scan QR Code'}
+      />
+
+      <Scene
+        clone
+        hideNavBar
+        key={'topupSuccess'}
+        component={TopupSuccess}
+        analyticsDesc={'Topup: Success'}
       />
     </Scene>
   </Scene>,
